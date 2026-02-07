@@ -1,0 +1,124 @@
+:root {
+    --bg-color: #f0f2f5;
+    --primary: #4a90e2;
+    --success: #4caf50;
+    --warning: #ffeb3b;
+    --danger: #ff4d4d;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    transition: background-color 0.5s ease;
+}
+
+body.all-done {
+    background-color: #d4edda;
+}
+
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 420px;
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="date"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.add-btn {
+    padding: 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.status-bar {
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.habit-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f8f9fa;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary);
+}
+
+.habit-item small {
+    font-size: 0.65rem;
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: var(--danger);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.day-cell {
+    aspect-ratio: 1;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.day-cell.all-completed { background-color: var(--success) !important; color: white; }
+.day-cell.partially-completed { background-color: var(--warning) !important; color: #333; }
+.day-cell.selected { outline: 3px solid var(--primary); outline-offset: -2px; }
+
+.legend { font-size: 0.75rem; text-align: center; margin-top: 15px; color: #666; }
+.dot { height: 10px; width: 10px; border-radius: 50%; display: inline-block; margin-left: 10px; }
+.green { background-color: var(--success); }
+.yellow { background-color: var(--warning); }
+.hint { font-size: 0.75rem; color: #999; text-align: center; margin-top: 10px; }

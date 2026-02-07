@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Habit Tracker</h1>
+        
+        <form onsubmit="event.preventDefault(); addHabit();">
+            <div class="input-section">
+                <input type="text" id="habit-input" placeholder="Type habit and press Enter...">
+                <div class="options">
+                    <input type="date" id="date-input">
+                    <label><input type="checkbox" id="daily-toggle"> Repeat Daily</label>
+                </div>
+                <button type="submit" class="add-btn">Add Task</button>
+            </div>
+        </form>
+
+        <div class="status-bar">
+            <h3 id="viewing-date">Loading...</h3>
+        </div>
+
+        <ul id="habit-list"></ul>
+
+        <hr>
+        <div class="legend">
+            <span class="dot green"></span> 100% Done 
+            <span class="dot yellow"></span> Partial
+        </div>
+        <div id="calendar-grid" class="calendar"></div>
+        <p class="hint">Click a date to see that day's progress</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
